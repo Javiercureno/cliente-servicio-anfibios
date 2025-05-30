@@ -1,8 +1,11 @@
 package com.ebc.cliente_servicio_anfibios.ui.components
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
@@ -55,6 +58,12 @@ fun AnfibioCard(anfibio: Anfibio, modifier: Modifier = Modifier) {
                 placeholder = painterResource(R.drawable.ic_launcher_background)
 
             )
+            Text(
+                text = anfibio.description,
+                style = MaterialTheme.typography.titleMedium,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier.padding(16.dp)
+            )
 
         }
 
@@ -71,5 +80,23 @@ private fun AnfibioCardPreview() {
         imgSrc = "https://developer.android.com/codelabs/basic-android-kotlin-compose-amphibians-app/img/great-basin-spadefoot.png"
     )
     AnfibioCard(anfibio = anfibio)
+
+}
+
+@Composable
+fun AnfibiosListScreen(
+    listaAnfibios: List<Anfibio>,
+    modifier: Modifier = Modifier,
+    paddingContenido: PaddingValues = PaddingValues(0.dp)
+
+){
+    LazyColumn (
+        modifier = modifier,
+        contentPadding = paddingContenido,
+        verticalArrangement = Arrangement.spacedBy(12.dp)
+
+    ) {
+
+    }
 
 }
