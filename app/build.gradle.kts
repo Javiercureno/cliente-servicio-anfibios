@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    kotlin("plugin.serialization") version "2.1.21"
 }
 
 android {
@@ -64,4 +65,5 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:${rootProject.extra["retrofit2_version"]}")
     implementation("io.coil-kt:coil-compose:2.4.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+
 }
